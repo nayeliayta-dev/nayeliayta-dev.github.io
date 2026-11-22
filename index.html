@@ -1,501 +1,250 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Nayeli Alexandra Ayta Asqui</title>
-
-    <style>
-
-        * {
-
-            box-sizing: border-box;
-
-        }
-
-        body {
-
-            font-family: Arial, sans-serif;
-
-            margin: 0;
-
-            padding: 0;
-
-            color: #333;
-
-            background-color: #ffffff;
-
-            background-image:
-
-                radial-gradient(circle, #FFD700 1px, transparent 1px),
-
-                radial-gradient(circle, #C0C0C0 1px, transparent 1px),
-
-                radial-gradient(circle, #F4C2C2 1px, transparent 1px);
-
-            background-size:
-
-                80px 80px,
-
-                120px 120px,
-
-                160px 160px;
-
-            background-position:
-
-                0 0,
-
-                40px 40px,
-
-                80px 20px;
-
-        }
-
-        header {
-
-            text-align: center;
-
-            padding: 50px 20px;
-
-        }
-
-        h1 {
-
-            color: #5b3cc4;
-
-            font-size: 2.8em;
-
-            margin-bottom: 10px;
-
-        }
-
-        h2 {
-
-            color: #5b3cc4;
-
-        }
-
-        section {
-
-            max-width: 950px;
-
-            margin: 25px auto;
-
-            background: rgba(255,255,255,0.95);
-
-            padding: 25px;
-
-            border-radius: 15px;
-
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-
-        }
-
-        ul {
-
-            line-height: 1.8;
-
-        }
-
-        table {
-
-            width: 100%;
-
-            border-collapse: collapse;
-
-            margin-top: 15px;
-
-        }
-
-        th {
-
-            background-color: #e9e4ff;
-
-        }
-
-        th, td {
-
-            border: 1px solid #ccc;
-
-            padding: 12px;
-
-            text-align: left;
-
-        }
-
-        a {
-
-            color: #5b3cc4;
-
-            text-decoration: none;
-
-        }
-
-        a:hover {
-
-            text-decoration: underline;
-
-        }
-
-        footer {
-
-            text-align: center;
-
-            padding: 20px;
-
-            margin-top: 40px;
-
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nayeli Alexandra Ayta Asqui</title>
+<style>
+:root{--bg:#0a0e1a;--card:rgba(18,24,43,.85);--line:#26304f;--text:#d7def0;--muted:#8d9ac0;--accent:#00e5ff;--accent2:#b388ff}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Segoe UI",Arial,sans-serif;color:var(--text);line-height:1.6;
+background-color:var(--bg);
+background-image:linear-gradient(rgba(0,229,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.05) 1px,transparent 1px),radial-gradient(circle at 20% 0%,#1b1550 0,transparent 45%),radial-gradient(circle at 90% 30%,#06323d 0,transparent 40%);
+background-size:40px 40px,40px 40px,auto,auto;background-attachment:fixed}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+header{display:flex;align-items:center;justify-content:center;min-height:440px;padding:40px 20px;text-align:center;background:url("img/campus.png") center 40%/cover,url("https://ucsp.edu.pe/wp-content/uploads/2024/03/bg-header-home-rescaled.jpg") center/cover,var(--bg)}
+.hero-box{background:rgba(10,14,26,.5);backdrop-filter:blur(3px);padding:24px 34px;border-radius:18px;max-width:94%}
+.btns{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+button.btn{background:none;color:var(--accent);font:inherit;cursor:pointer}
+.loc{display:grid;grid-template-columns:1fr 1.2fr;gap:18px;align-items:stretch}
+.lc{text-align:center;padding:18px;border:1px solid var(--line);border-radius:12px;background:#0d1326}
+.lc svg{width:38px;height:38px;fill:none;stroke:var(--accent);stroke-width:2}
+.lc p{margin:6px 0}
+.loc iframe{width:100%;min-height:300px;height:100%;border:0;border-radius:12px;filter:invert(.9) hue-rotate(180deg)}
+.skills{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.avatar{width:130px;height:130px;flex:none;border-radius:50%;overflow:hidden;border:3px solid var(--accent);box-shadow:0 0 18px rgba(0,229,255,.5);margin:0 auto}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 10px}
+.tabs button{padding:7px 16px;border-radius:18px;border:1px solid var(--line);background:#0d1326;color:var(--text);font:inherit;cursor:pointer}
+.tabs button.on{border-color:var(--accent);color:var(--accent);box-shadow:0 0 10px rgba(0,229,255,.3)}
+.pane{display:none}.pane.on{display:block}
+.pane li{margin-bottom:4px}
+@media(max-width:700px){.loc{grid-template-columns:1fr}}
+header p{margin:4px 0}
+.logo{width:52px;height:52px;flex:none;border-radius:12px;background:#1c2542;border:1px solid var(--line);display:grid;place-items:center;position:relative;overflow:hidden;font-weight:700;font-size:.8em;color:var(--accent)}
+.logo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;padding:5px}
+.hd{display:flex;align-items:center;gap:12px;margin-bottom:6px}.hd h3{margin:0}
+.map{display:grid;grid-template-columns:1fr 1.4fr;gap:18px;align-items:stretch}
+.map iframe{width:100%;min-height:280px;border:1px solid var(--line);border-radius:10px;filter:invert(.9) hue-rotate(180deg) saturate(.8)}
+@media(max-width:700px){.map{grid-template-columns:1fr}}
+h1{margin:0;font-size:2.5em;color:#fff;text-shadow:0 0 18px rgba(0,229,255,.55)}
+h2{color:var(--accent);margin-top:0}h3{margin:0 0 4px}
+.sub{color:var(--accent2);font-size:1.25em;margin:6px 0}
+.btn{display:inline-block;margin-top:10px;padding:8px 18px;border:1px solid var(--accent);border-radius:20px}
+.btn:hover{background:rgba(0,229,255,.15);text-decoration:none}
+section{max-width:1000px;margin:25px auto;background:var(--card);border:1px solid var(--line);padding:25px;border-radius:14px;box-shadow:0 0 25px rgba(0,229,255,.07)}
+.about{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;max-width:1000px}
+.about h3{color:var(--accent2);font-size:1.05em}.about p{font-size:.93em;margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:.8em;padding:3px 10px;border-radius:12px;background:#1c2542;border:1px solid var(--line)}
+.flow{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:0 25%;margin:20px 0 10px}
+.flow svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.col{display:flex;flex-direction:column;justify-content:space-around;gap:14px;position:relative;z-index:1}
+.col small{text-align:center;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+.node{padding:10px 12px;text-align:center;border:2px solid var(--c);border-radius:10px;background:#0d1326;cursor:pointer;transition:.25s;font-size:.9em}
+.node:hover,.node.on{box-shadow:0 0 16px var(--c);background:color-mix(in srgb,var(--c) 22%,#0d1326)}
+.dim{opacity:.25}
+path.e{fill:none;stroke-width:2.5;opacity:.55;transition:.25s}
+path.e.on{opacity:1;stroke-width:4;filter:drop-shadow(0 0 4px currentColor)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px;margin-top:12px}
+.course{border:1px solid var(--line);border-left:4px solid var(--c);border-radius:8px;padding:12px 14px;background:#0d1326;transition:.25s}
+.course.on{box-shadow:0 0 14px var(--c)}
+.course h3{color:var(--c);font-size:1.02em}.course p{margin:6px 0 0;font-size:.9em}
+.doc{font-size:.88em;color:var(--muted)}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.link{border:1px solid var(--line);border-radius:10px;padding:14px;background:#0d1326}
+.link h3{color:var(--accent2);font-size:1.02em}.link p{font-size:.88em;margin:4px 0 8px;color:var(--muted)}
+.link a.s{display:inline-block;margin:2px 8px 2px 0;padding:3px 12px;border:1px solid var(--line);border-radius:14px;font-size:.85em}
+ul{padding-left:20px}
+footer{text-align:center;padding:20px;color:var(--muted)}
+@media(max-width:700px){.flow svg{display:none}.flow{grid-template-columns:1fr;gap:14px}h1{font-size:1.9em}}
+</style>
 </head>
-
 <body>
-
-    <header>
-
-        <h1> Nayeli Alexandra Ayta Asqui </h1>
-
-        <h2>Estudiante de Ciencia de Datos</h2>
-
-        <p>
-
-            Universidad Católica San Pablo (UCSP) - Arequipa
-
-        </p>
-
-        <a href="https://ucsp.edu.pe/" target="_blank">
-
-            Visitar sitio web de la UCSP
-
-        </a>
-
-    </header>
-
-
-    <section>
-
-        <h2> Sobre mí</h2>
-
-        <p>
-
-            Soy Alexandra, estudiante de Ciencia de Datos en la Universidad
-
-            Católica San Pablo (UCSP) de Arequipa.
-
-            Me considero una persona responsable, curiosa y comprometida
-
-            con mis objetivos académicos y profesionales.
-
-        </p>
-
-    </section>
-
-
-    <section>
-
-        <h2> Mis intereses</h2>
-
-        <p>
-
-            Me interesa aprender y desarrollarme profesionalmente en mi carrera.
-
-            Disfruto la programación, la IA y las matemáticas.
-
-            A futuro deseo poder utilizar la tecnología para resolver problemas
-
-            y generar un impacto positivo.
-
-        </p>
-
-    </section>
-
-
-    <section>
-
-        <h2> Habilidades</h2>
-
-        <ul>
-
-            <li>Empatía</li>
-
-            <li>Solidaridad</li>
-
-            <li>Trabajo en equipo</li>
-
-            <li>Responsabilidad</li>
-
-            <li>Organización</li>
-
-            <li>Pensamiento lógico</li>
-
-            <li>Aprendizaje continuo</li>
-
-            <li>Adaptabilidad</li>
-
-        </ul>
-
-    </section>
-
-
-<section>
-
-    <h2>Cursos del periodo I - 2026</h2>
-
-    <article>
-
-        <h3>Comunicación I</h3>
-
-        <p><strong>Docente:</strong> Ángel Rodríguez Cruz</p>
-
-        <p>
-            En este curso desarrollo habilidades de comunicación oral y escrita,
-            fundamentales para expresar ideas de manera clara y efectiva.
-        </p>
-
-    </article>
-
-
-    <article>
-
-        <h3>Fundamentos de Programación</h3>
-
-        <p>
-
-            <strong>Docente:</strong>
-
-            Dr. Julio Santisteban Pablo
-
-            -
-
-            <a href="https://www.linkedin.com/in/santisteban/"
-               target="_blank">
-
-               LinkedIn
-
-            </a>
-
-        </p>
-
-        <p>
-            Aprendo los conceptos básicos de programación utilizando Python,
-            incluyendo variables, estructuras de control, funciones y algoritmos.
-        </p>
-
-    </article>
-
-
-    <article>
-
-        <h3>Fundamentos Matemáticos para Computación</h3>
-
-        <p>
-
-            <strong>Docente:</strong>
-
-            Mg. Meyber Yuliana Vargas De Núñez
-
-            -
-
-            <a href="https://www.linkedin.com/in/meyber-yuliana-vargas-maquera-de-n%C3%BA%C3%B1ez-8224163b8/"
-               target="_blank">
-
-               LinkedIn
-
-            </a>
-
-        </p>
-
-        <p>
-            Estudio lógica matemática, conjuntos y otras herramientas que sirven
-            como base para las ciencias de la computación y la ciencia de datos.
-        </p>
-
-    </article>
-
-
-    <article>
-
-        <h3>Introducción a Computación</h3>
-
-        <p>
-
-            <strong>Docente:</strong>
-
-            Ernesto Cuadros Vargas
-
-            -
-
-            <a href="https://www.linkedin.com/in/ecuadrosv/"
-               target="_blank">
-
-               LinkedIn
-
-            </a>
-
-        </p>
-
-        <p>
-            Conozco los fundamentos de la computación, sus áreas de aplicación y
-            las oportunidades de desarrollo profesional en esta disciplina.
-        </p>
-
-    </article>
-
-
-    <article>
-
-        <h3>Introducción a la Vida Universitaria</h3>
-
-        <p>
-
-            <strong>Docente:</strong>
-
-            Mg. Lilian Moscoso Prieto
-
-            -
-
-            <a href="https://www.linkedin.com/in/lilian-moscoso-prieto-53345390/"
-               target="_blank">
-
-               LinkedIn
-
-            </a>
-
-        </p>
-
-        <p>
-            Este curso me ayuda a desarrollar hábitos de estudio, organización y
-            adaptación a la vida universitaria.
-        </p>
-
-    </article>
-
-
-    <article>
-
-        <h3>Lógica</h3>
-
-        <p>
-
-            <strong>Docente:</strong>
-
-            Mg. Kristel Gisselle Loayza Cruz
-
-            -
-
-            <a href="https://www.linkedin.com/in/kristel-gisselle-loayza-cruz-abb3b039b/"
-               target="_blank">
-
-               LinkedIn
-
-            </a>
-
-        </p>
-
-        <p>
-            Aprendo a razonar de manera rigurosa mediante proposiciones,
-            argumentos y demostraciones, fortaleciendo mi pensamiento lógico.
-        </p>
-
-    </article>
-
+<header>
+<div class="hero-box">
+<h1>Nayeli Alexandra Ayta Asqui</h1>
+<div class="sub">Estudiante de Ciencia de Datos</div>
+<p>Universidad Católica San Pablo (UCSP) – Arequipa</p>
+<a class="btn" href="https://ucsp.edu.pe/" target="_blank" rel="noopener">Visitar sitio web de la UCSP</a>
+</div>
+</header>
+
+<section class="about">
+<div><h2>Sobre mí</h2><p>Soy Alexandra, estudiante de Ciencia de Datos en la UCSP de Arequipa. Me considero una persona responsable, curiosa y comprometida con mis objetivos académicos y profesionales.</p></div>
+<div><h2>Mis intereses</h2><p>Me interesa aprender y desarrollarme profesionalmente. Disfruto la programación, la IA y las matemáticas, y deseo usar la tecnología para resolver problemas y generar un impacto positivo.</p></div>
+<div class="skills"><div><h2>Habilidades</h2><div class="chips"><span>Empatía</span><span>Solidaridad</span><span>Trabajo en equipo</span><span>Responsabilidad</span><span>Organización</span><span>Pensamiento lógico</span><span>Aprendizaje continuo</span><span>Adaptabilidad</span></div></div><div class="avatar"><img src="img/perfil.png" alt="Ilustración de Nayeli programando con su laptop"></div></div>
 </section>
 
+<section>
+<h2>Mapa de cursos: periodo I → periodo II (2026)</h2>
+<p class="doc">Pasa el cursor (o toca) un curso para resaltar sus conexiones.</p>
+<div class="flow" id="flow">
+<svg id="svg"></svg>
+<div class="col" id="c1"><small>Periodo I</small></div>
+<div class="col" id="c2"><small>Periodo II</small></div>
+</div>
+</section>
 
-    <section>
+<section>
+<h2>Cursos del periodo I – 2026</h2>
+<div class="grid" id="g1"></div>
+</section>
 
-        <h2> Contacto</h2>
+<section>
+<h2>Cursos del periodo II – 2026</h2>
+<div class="grid" id="g2"></div>
+</section>
 
-        <ul>
+<section>
+<h2>Enlaces de interés UCSP</h2>
+<div class="links" id="links"></div>
+</section>
 
-            <li>
+<section>
+<h2>Ubicación</h2>
+<div class="loc">
+<div class="lc">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+<h3>Dpto. de Computación</h3>
+<p>Edificio P. José de Acosta, 4to Nivel<br>Campus San Lázaro: Urb. Campiña Paisajista Mz. H Lt. 32 – Quinta Vivanco<br>Arequipa, Perú</p>
+<p class="doc"><strong>Correo electrónico:</strong> <a href="mailto:dc@ucsp.edu.pe">dc@ucsp.edu.pe</a></p>
+<p class="doc"><strong>Teléfono:</strong> <a href="tel:+5154605630">+51 (54) 605630</a>. Anexo 648</p>
+<div class="btns">
+<a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Universidad+Cat%C3%B3lica+San+Pablo+Campus+San+L%C3%A1zaro+Arequipa" target="_blank" rel="noopener">Cómo llegar desde mi ubicación</a>
+<button class="btn" id="cp" type="button">Copiar dirección</button>
+</div>
+</div>
+<iframe title="Mapa del Campus San Lázaro" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Universidad+Cat%C3%B3lica+San+Pablo+Campus+San+L%C3%A1zaro+Arequipa&output=embed"></iframe>
+</div>
+<h3 style="margin-top:20px">¿Cómo llegar?</h3>
+<div class="tabs" id="tabs">
+<button class="on" data-p="p1" type="button">🌉 Desde el Puente Grau</button>
+<button data-p="p2" type="button">🏛️ Desde la Plaza de Armas</button>
+<button data-p="p3" type="button">🚕 Taxi y qué buscar</button>
+</div>
+<div class="pane on" id="p1"><ol>
+<li>Ubícate en el <strong>Puente Grau</strong>, sobre el río Chili: es tu punto de partida.</li>
+<li>El campus está <strong>a orillas del río Chili</strong>, en el barrio de <strong>San Lázaro</strong>. Usa el río como guía.</li>
+<li>Si dudas, pregunta por <strong>Quinta Vivanco</strong> o por la <strong>Urb. Campiña Paisajista</strong>.</li>
+<li>Entra al <strong>Campus San Lázaro</strong>, ve al <strong>Edificio P. José de Acosta</strong> y sube al <strong>4.º nivel</strong>.</li>
+</ol>
+<a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Universidad+Cat%C3%B3lica+San+Pablo+Campus+San+L%C3%A1zaro+Arequipa&travelmode=walking&origin=Puente+Grau+Arequipa" target="_blank" rel="noopener">Ver ruta a pie desde el Puente Grau</a></div>
+<div class="pane" id="p2"><ol>
+<li>Parte desde la <strong>Plaza de Armas</strong> de Arequipa: el campus queda a unas <strong>cinco cuadras</strong>.</li>
+<li>Dirígete hacia el barrio de <strong>San Lázaro</strong> y pregunta por <strong>Quinta Vivanco</strong>.</li>
+<li>Entra al <strong>Campus San Lázaro</strong>, ve al <strong>Edificio P. José de Acosta</strong> y sube al <strong>4.º nivel</strong>.</li>
+</ol>
+<a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Universidad+Cat%C3%B3lica+San+Pablo+Campus+San+L%C3%A1zaro+Arequipa&travelmode=walking&origin=Plaza+de+Armas+Arequipa" target="_blank" rel="noopener">Ver ruta a pie desde la Plaza de Armas</a></div>
+<div class="pane" id="p3"><ol>
+<li><strong>En taxi</strong>, di: “Universidad Católica San Pablo, Campus San Lázaro, Quinta Vivanco”. En 2019 la universidad indicaba una tarifa de unos 5 soles desde el centro (puede haber cambiado).</li>
+<li>Busca el edificio con gran fachada de vidrio y el logo <strong>“Universidad Católica San Pablo”</strong>, rodeado de áreas verdes y con vista al <strong>volcán Misti</strong>.</li>
+<li>El Departamento de Computación está en el <strong>Edificio P. José de Acosta, 4.º nivel</strong>.</li>
+</ol></div>
+</section>
 
-                Correo institucional:
+<section>
+<h2>Contacto</h2>
+<ul>
+<li>Correo institucional: <a href="mailto:nayeli.ayta@ucsp.edu.pe">nayeli.ayta@ucsp.edu.pe</a></li>
+<li>Correo personal: <a href="mailto:danielaalexandraa69@gmail.com">danielaalexandraa69@gmail.com</a></li>
+<li>GitHub: <a href="https://github.com/nayeliayta-dev" target="_blank" rel="noopener">github.com/nayeliayta-dev</a></li>
+<li>LinkedIn: <a href="https://www.linkedin.com/in/nayeli-alexandra-ayta-asqui-7a97b5418/" target="_blank" rel="noopener">Ver perfil</a></li>
+<li>Perfiles de algunos compañeros:
+<ul>
+<li>Yenifer Huarachi: <a href="https://yeniferhuarachi-code.github.io/yeniferhuarachihalanoca.github.io/" target="_blank" rel="noopener">Visitar página</a></li>
+<li>Annel: <a href="https://annel-nn.github.io/" target="_blank" rel="noopener">Visitar página</a></li>
+<li>Eduardo Isaac Rojas Juárez: <a href="https://eduardoisaacrojasjuarez.github.io/" target="_blank" rel="noopener">Visitar página</a></li>
+<li>Emely Mirella Anccari Lopez: <a href="https://emelyanccari-ops.github.io" target="_blank" rel="noopener">Visitar página</a></li>
+<li>Dominick Ray Apfata Llaique: <a href="https://dominickapfata-sudo.github.io/dominickrayapfatallaique.github.io/" target="_blank" rel="noopener">Visitar página</a></li>
+<li>Rafael Chirinos: <a href="https://rafaelchirinosaspauza.github.io/sitio-web-sobre-mi-/" target="_blank" rel="noopener">Visitar página</a></li>
+<li>Eduardo Isaac Rojas Juárez: <a href="https://eduardoisaacrojasjuarez.github.io/" target="_blank" rel="noopener">Visitar página</a></li>
+<li>Emely Mirella Anccari Lopez: <a href="https://emelyanccari-ops.github.io" target="_blank" rel="noopener">Visitar página</a></li>
+<li>Dominick Ray Apfata Llaique: <a href="https://dominickapfata-sudo.github.io/dominickrayapfatallaique.github.io/" target="_blank" rel="noopener">Visitar página</a></li>
+</ul>
+</li>
+</ul>
+</section>
 
-                <a href="mailto:nayeli.ayta@ucsp.edu.pe">
+<footer><p>© 2026 – Nayeli Alexandra Ayta Asqui</p></footer>
 
-                    nayeli.ayta@ucsp.edu.pe
-
-                </a>
-
-            </li>
-
-            <li>
-
-                Correo personal:
-
-                <a href="mailto:danielaalexandraa69@gmail.com">
-
-                    danielaalexandraa69@gmail.com
-
-                </a>
-
-            </li>
-
-            <li>
-
-                GitHub:
-
-                <a href="https://github.com/nayeliayta-dev" target="_blank">
-
-                    github.com/nayeliayta-dev
-
-                </a>
-
-            </li>
-
-            <li>
-
-                LinkedIn:
-
-                <a href="https://www.linkedin.com/in/nayeli-alexandra-ayta-asqui-7a97b5418/" target="_blank">
-
-                    Ver perfil
-
-                </a>
-
-            </li>
-              <li>
-
-            Perfil de Yenifer Huarachi:
-
-            <a href="https://yeniferhuarachi-code.github.io/yeniferhuarachihalanoca.github.io/" target="_blank">
-
-                Visitar página
-
-            </a>
-
-        </li>
-
-        <li>
-
-            Perfil de Annel:
-
-            <a href="https://annel-nn.github.io/" target="_blank">
-
-                Visitar página
-
-        </ul>
-
-    </section>
-
-
-    <footer>
-
-        <p>
-
-            © 2026 - Nayeli Alexandra Ayta Asqui
-
-        </p>
-
-    </footer>
-
+<script>
+const L=(n,u)=>({n,u});
+const courses=[
+{id:"com",p:1,c:"#ff6b9d",t:"Comunicación I",d:[L("Ángel Rodríguez Cruz")],x:"Desarrollo habilidades de comunicación oral y escrita para expresar ideas de manera clara y efectiva.",to:["com2"]},
+{id:"fp",p:1,c:"#00e5ff",t:"Fundamentos de Programación",d:[L("Dr. Julio Santisteban Pablo","https://www.linkedin.com/in/santisteban/")],x:"Aprendo los conceptos básicos de programación trabajando con el lenguaje Python: variables, estructuras de control, funciones y algoritmos.",to:["poo"]},
+{id:"fmc",p:1,c:"#ffd54f",t:"Fundamentos Matemáticos para Computación",d:[L("Mg. Meyber Yuliana Vargas De Núñez","https://www.linkedin.com/in/meyber-yuliana-vargas-maquera-de-n%C3%BA%C3%B1ez-8224163b8/")],x:"Estudio lógica matemática, conjuntos y otras herramientas base para la computación y la ciencia de datos.",to:["cal"]},
+{id:"ic",p:1,c:"#69f0ae",t:"Introducción a Computación",d:[L("Ernesto Cuadros Vargas","https://www.linkedin.com/in/ecuadrosv/")],pg:"https://socios.spc.org.pe/ecuadros/",x:"Conozco los fundamentos de la computación, sus áreas de aplicación y las oportunidades profesionales de esta disciplina.",to:["ed"]},
+{id:"ivu",p:1,c:"#ff9e40",t:"Introducción a la Vida Universitaria",d:[L("Mg. Lilian Moscoso Prieto","https://www.linkedin.com/in/lilian-moscoso-prieto-53345390/")],x:"Desarrollo hábitos de estudio, organización y adaptación a la vida universitaria.",to:[]},
+{id:"log",p:1,c:"#b388ff",t:"Lógica",d:[L("Mg. Kristel Gisselle Loayza Cruz","https://www.linkedin.com/in/kristel-gisselle-loayza-cruz-abb3b039b/")],x:"Razono de manera rigurosa mediante proposiciones, argumentos y demostraciones, fortaleciendo mi pensamiento lógico.",to:["ed"]},
+{id:"ed",p:2,c:"#ff5252",t:"Estructuras Discretas",d:[],x:"Estudio conjuntos, relaciones, grafos y combinatoria, base matemática para algoritmos y estructuras de datos."},
+{id:"com2",p:2,c:"#ea80fc",t:"Comunicación II",d:[],x:"Continúo fortaleciendo mi expresión oral y escrita con textos académicos y exposiciones más elaboradas."},
+{id:"his",p:2,c:"#ff4081",t:"Historia de Occidente",d:[L("Mónica Widmann Orihuela","https://pe.linkedin.com/in/m%C3%B3nica-widmann-orihuela-a85a3653")],x:"Recorro la historia de la civilización occidental para comprender el origen de las ideas y sociedades actuales."},
+{id:"cal",p:2,c:"#40c4ff",t:"Cálculo Diferencial e Integral I",d:[L("Dugan Paul Nina Ortiz","https://www.linkedin.com/in/dugan-paul-nina-ortiz-ab875774/")],x:"Estudio límites, derivadas e integrales, herramientas esenciales para la ciencia de datos y la computación."},
+{id:"poo",p:2,c:"#76ff03",t:"Programación Orientada a Objetos",d:[L("Kelly Vizconde La Motta","https://www.linkedin.com/in/kelly-vizconde-la-motta-3a57a4143/"),{n:"María Alejandra Cornejo Lupa",ex:[["Google Académico","https://scholar.google.com/citations?user=LiiGZkcAAAAJ&hl=es"],["GitHub","https://github.com/Alex23013"]]}],x:"Aprendo a diseñar software con clases, objetos, herencia y polimorfismo. En este curso pasamos del lenguaje Python (visto en Fundamentos de Programación) a C++."}
+];
+const byId=Object.fromEntries(courses.map(c=>[c.id,c]));
+const edges=[];courses.forEach(c=>(c.to||[]).forEach(t=>edges.push([c.id,t])));
+const A=(u,t)=>`<a href="${u}" target="_blank" rel="noopener">${t}</a>`;
+const docs=c=>c.d.map(x=>x.u?A(x.u,x.n+" (LinkedIn)"):x.ex?x.n+" ("+x.ex.map(e=>A(e[1],e[0])).join(" · ")+")":x.n).join(" · ");
+courses.forEach(c=>{
+ const n=document.createElement("div");n.className="node";n.dataset.id=c.id;n.style.setProperty("--c",c.c);n.textContent=c.t;
+ document.getElementById("c"+c.p).appendChild(n);
+ const k=document.createElement("article");k.className="course";k.dataset.id=c.id;k.style.setProperty("--c",c.c);
+ k.innerHTML=`<h3>${c.t}</h3><div class="doc"><strong>Docente${c.d.length>1?"s":""}:</strong> ${c.d.length?docs(c):"Por confirmar"}${c.pg?` · <a href="${c.pg}" target="_blank" rel="noopener">Página personal</a>`:""}</div><p>${c.x}</p>`;
+ document.getElementById("g"+c.p).appendChild(k);
+});
+const svg=document.getElementById("svg"),flow=document.getElementById("flow");
+function draw(){
+ svg.innerHTML="";const f=flow.getBoundingClientRect();
+ edges.forEach(([a,b])=>{
+  const A=document.querySelector(`.node[data-id=${a}]`).getBoundingClientRect(),B=document.querySelector(`.node[data-id=${b}]`).getBoundingClientRect();
+  const x1=A.right-f.left,y1=A.top+A.height/2-f.top,x2=B.left-f.left,y2=B.top+B.height/2-f.top,m=(x1+x2)/2;
+  const p=document.createElementNS("http://www.w3.org/2000/svg","path");
+  p.setAttribute("d",`M${x1},${y1} C${m},${y1} ${m},${y2} ${x2},${y2}`);
+  p.setAttribute("class","e");p.setAttribute("stroke",byId[a].c);p.style.color=byId[a].c;p.dataset.a=a;p.dataset.b=b;svg.appendChild(p);
+ });
+}
+function hl(id){
+ const rel=new Set(id?[id]:[]);
+ document.querySelectorAll("path.e").forEach(p=>{const on=id&&(p.dataset.a===id||p.dataset.b===id);p.classList.toggle("on",!!on);if(on){rel.add(p.dataset.a);rel.add(p.dataset.b)}});
+ document.querySelectorAll(".node").forEach(n=>{n.classList.toggle("on",!!id&&n.dataset.id===id);n.classList.toggle("dim",!!id&&!rel.has(n.dataset.id))});
+ document.querySelectorAll(".course").forEach(k=>k.classList.toggle("on",!!id&&k.dataset.id===id));
+}
+document.querySelectorAll(".node,.course").forEach(e=>{
+ e.addEventListener("mouseenter",()=>hl(e.dataset.id));
+ e.addEventListener("mouseleave",()=>hl(null));
+ e.addEventListener("click",()=>hl(e.dataset.id));
+});
+const fav=d=>`https://www.google.com/s2/favicons?domain=${d}&sz=128`;
+const sites=[
+{t:"Universidad Católica San Pablo",lg:fav("ucsp.edu.pe"),i:"UCSP",x:"Página oficial de la universidad: carreras, admisión, noticias e información institucional.",l:[["Sitio web","https://ucsp.edu.pe/"]]},
+{t:"Departamento de Computación",lg:fav("dc.ucsp.edu.pe"),i:"DC",x:"Información académica, docentes y novedades del Departamento de Computación de la UCSP.",l:[["Sitio web","https://dc.ucsp.edu.pe/"]]},
+{t:"Vida San Pablo UCSP",lg:"https://unavatar.io/instagram/vida.sanpablo",i:"VSP",x:"Actividades, bienestar y vida estudiantil de la comunidad universitaria.",l:[["Instagram","https://www.instagram.com/vida.sanpablo/"],["Facebook","https://www.facebook.com/VidaSanPablo/"]]},
+{t:"Computación UCSP",lg:"https://unavatar.io/instagram/computacion_ucsp",i:"CC",x:"Noticias, eventos y logros de estudiantes y docentes de Computación.",l:[["Instagram","https://www.instagram.com/computacion_ucsp/"],["Facebook","https://www.facebook.com/computacionUCSP/"]]},
+{t:"Capítulo Estudiantil ACM UCSP",lg:fav("ucsp.acm.org"),i:"ACM",x:"Grupo estudiantil de la ACM: talleres, charlas y competencias de programación.",l:[["Sitio web","https://ucsp.acm.org/"],["Facebook","https://www.facebook.com/UCSPACM/"],["Instagram","https://www.instagram.com/ucsp_acm/"]]}
+];
+document.getElementById("links").innerHTML=sites.map(s=>`<div class="link"><div class="hd"><div class="logo">${s.i}${s.lg?`<img src="${s.lg}" alt="Logo ${s.t}" onerror="this.remove()">`:""}</div><h3>${s.t}</h3></div><p>${s.x}</p>${s.l.map(a=>`<a class="s" href="${a[1]}" target="_blank" rel="noopener">${a[0]}</a>`).join("")}</div>`).join("");
+document.querySelectorAll("#tabs button").forEach(b=>b.addEventListener("click",()=>{
+ document.querySelectorAll("#tabs button").forEach(x=>x.classList.toggle("on",x===b));
+ document.querySelectorAll(".pane").forEach(p=>p.classList.toggle("on",p.id===b.dataset.p));
+}));
+document.getElementById("cp").addEventListener("click",e=>{
+ const t="Edificio P. José de Acosta, 4to Nivel, Campus San Lázaro: Urb. Campiña Paisajista Mz. H Lt. 32 – Quinta Vivanco, Arequipa, Perú";
+ const ok=()=>{e.target.textContent="¡Copiada!";setTimeout(()=>e.target.textContent="Copiar dirección",1800)};
+ (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(ok).catch(()=>{prompt("Copia la dirección:",t)});
+});
+addEventListener("load",draw);addEventListener("resize",draw);draw();
+</script>
 </body>
-
 </html>
